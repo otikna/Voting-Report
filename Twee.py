@@ -13,9 +13,9 @@ access_token_secret = "Your-Access-Token-Secret"
 consumer_key = "Your-Consumer-Key"
 consumer_secret = "Your-Consumer-Secret"
 
-giris = tweepy.OAuthHandler(consumer_key, consumer_secret)
-giris.set_access_token(access_token, access_token_secret)
-api = tweepy.API(giris)
+login = tweepy.OAuthHandler(consumer_key, consumer_secret)
+login.set_access_token(access_token, access_token_secret)
+api = tweepy.API(login)
 
 for tweet in tweepy.Cursor(api.search,
                            q="secim AND hile",
