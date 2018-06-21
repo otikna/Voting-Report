@@ -1,6 +1,6 @@
 import requests
 
-baslik = {
+header = {
 'Authorization': 'Token Your-Token',
 'Content-Type': 'application/json'
 }
@@ -14,7 +14,7 @@ with open("data.txt", "r", encoding="UTF-8") as f:
         data.append(s)
 
 for s in data:
-    response = requests.post(url, json={"text":s}, headers=baslik).json()
+    response = requests.post(url, json={"text":s}, headers=header).json()
     for i in response:
         if i[1] == "I-LOC":
             with open("result.txt", "a", encoding="UTF-8") as f:
